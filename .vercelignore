@@ -1,0 +1,4 @@
+# Vercel only needs the static demo
+/*
+!/public
+!/vercel.json

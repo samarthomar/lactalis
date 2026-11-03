@@ -129,3 +129,6 @@ html = html.replace("/*__JS__*/", (W / "charts.js").read_text(encoding="utf-8") 
 out = B / "lactalis_demo.html"
 out.write_text(html, encoding="utf-8")
 print(f"saved {out} ({out.stat().st_size / 1024:,.0f} KB)")
+# copy for static hosting (Vercel serves public/index.html)
+(ROOT / "public").mkdir(exist_ok=True)
+(ROOT / "public" / "index.html").write_text(html, encoding="utf-8")
