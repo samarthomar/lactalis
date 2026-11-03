@@ -1,0 +1,4 @@
+plant,line,description,cases_per_day,extra_shift_cases,changeover_minutes,notes
+Nambour,L1,"Large-format white (2L, 3L)",9000,3000,25,"2 shifts; third shift adds 3,000 cases"
+Nambour,L2,1L white and lactose free,2500,800,30,2 shifts
+Nambour,L3,Flavoured milk and iced coffee singles,7200,2000,40,"2 shifts; extra night shift adds 2,000 cases"

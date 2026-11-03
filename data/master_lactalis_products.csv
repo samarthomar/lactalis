@@ -1,0 +1,17 @@
+sku,name,brand,subcat,size_l,units_per_case
+PAU-FC-2L,Pauls Full Cream Milk 2L,Pauls,white_take_home,2.0,9
+PAU-FC-3L,Pauls Full Cream Milk 3L,Pauls,white_take_home,3.0,6
+PAU-RF-2L,Pauls Reduced Fat Milk 2L,Pauls,white_take_home,2.0,9
+PAU-BAR-2L,Pauls Barista Milk 2L,Pauls,barista,2.0,9
+PAU-FC-1L,Pauls Full Cream Milk 1L,Pauls,white_single,1.0,12
+PAU-RF-1L,Pauls Reduced Fat Milk 1L,Pauls,white_single,1.0,12
+ZYM-LF-1L,Zymil Lactose Free Milk 1L,Zymil,lactose_free,1.0,12
+ZYM-LF-2L,Zymil Lactose Free Milk 2L,Zymil,lactose_free,2.0,9
+OAK-CHOC-600,Oak Chocolate Milk 600mL,Oak,flavoured_milk,0.6,12
+OAK-STR-600,Oak Strawberry Milk 600mL,Oak,flavoured_milk,0.6,12
+OAK-IC-600,Oak Iced Coffee 600mL,Oak,iced_coffee,0.6,12
+ICB-IC-500,Ice Break Iced Coffee 500mL,Ice Break,iced_coffee,0.5,12
+ICB-IC-750,Ice Break Iced Coffee 750mL,Ice Break,iced_coffee,0.75,12
+ICB-LS-500,Ice Break Iced Coffee Less Sugar 500mL,Ice Break,iced_coffee,0.5,12
+BRK-IC-750,Breaka Iced Coffee 750mL,Breaka,iced_coffee,0.75,12
+BRK-CHOC-750,Breaka Chocolate Milk 750mL,Breaka,flavoured_milk,0.75,12

@@ -1,0 +1,184 @@
+customer_id,name,channel,state,postcode
+RET-A,National Retailer A - QLD Regional DC,Major retail,QLD,4110
+RET-B,National Retailer B - QLD Regional DC,Major retail,QLD,4073
+RET-C,Discount Retailer - QLD DC,Discount retail,QLD,4300
+L100001,Bay Eatery Brisbane,Food service,QLD,4092
+L100002,Grind Eatery Buderim,Food service,QLD,4262
+L100003,Riverside Deli Redcliffe,Food service,QLD,4459
+L100004,Grind Foodstore Toowoomba,Food service,QLD,4572
+L100005,Bean Eatery Gympie,Food service,QLD,4304
+L100006,Grind Grocer Ipswich,Food service,QLD,4314
+L100007,Market Grocer Springfield,Food service,QLD,4096
+L100008,Sunny Eatery Redcliffe,Food service,QLD,4427
+L100009,Coastal Grocer Springfield,Food service,QLD,4104
+L100010,Bay Deli Redcliffe,Food service,QLD,4091
+L100011,Summit Roasters Caloundra,Independent,QLD,4353
+L100012,Corner Kitchen Ipswich,Independent,QLD,4610
+L100013,Valley Foodstore Maroochydore,Food service,QLD,4570
+L100014,Palm Kitchen Caboolture,Food service,QLD,4037
+L100015,Main St Cafe Nambour,Food service,QLD,4091
+L100016,Ridge Eatery Maroochydore,Food service,QLD,4413
+L100017,Valley Foodstore Brisbane,Independent,QLD,4366
+L100018,Riverside Deli Cleveland,Independent,QLD,4211
+L100019,Creek Eatery Maroochydore,Independent,QLD,4619
+L100020,Hinterland Eatery Nambour,Independent,QLD,4160
+L100021,Bay Cafe Caboolture,Independent,QLD,4346
+L100022,Ridge Cafe Springfield,Food service,QLD,4583
+L100023,Coastal Deli Nambour,Independent,QLD,4528
+L100024,Riverside Grocer Ipswich,Convenience,QLD,4314
+L100025,Sunny Kitchen Caboolture,Food service,QLD,4512
+L100026,Riverside Cafe Noosa,Independent,QLD,4300
+L100027,Sunny Grocer Caloundra,Independent,QLD,4255
+L100028,Station Grocer Gympie,Independent,QLD,4545
+L100029,Market Cafe Beaudesert,Independent,QLD,4146
+L100030,Palm Espresso Nambour,Independent,QLD,4281
+L100031,Village Eatery Beaudesert,Food service,QLD,4468
+L100032,Ridge Cafe Noosa,Food service,QLD,4038
+L100033,Riverside Kitchen Redcliffe,Independent,QLD,4064
+L100034,Main St Eatery Redcliffe,Independent,QLD,4449
+L100035,Market Kitchen Cleveland,Independent,QLD,4566
+L100036,Harbour Foodstore Buderim,Independent,QLD,4333
+L100037,Valley Espresso Springfield,Convenience,QLD,4555
+L100038,Station Grocer Nambour,Food service,QLD,4473
+L100039,Valley Eatery Noosa,Food service,QLD,4376
+L100040,Station Cafe Caboolture,Independent,QLD,4525
+L100041,Village Espresso Nambour,Convenience,QLD,4044
+L100042,Bean Eatery Beaudesert,Food service,QLD,4190
+L100043,Grind Espresso Gympie,Food service,QLD,4214
+L100044,Village Foodstore Caloundra,Food service,QLD,4191
+L100045,Station Grocer Toowoomba,Food service,QLD,4122
+L100046,Riverside Eatery Ipswich,Independent,QLD,4102
+L100047,Harbour Foodstore Ipswich,Food service,QLD,4578
+L100048,Village Grocer Springfield,Food service,QLD,4257
+L100049,Garden Deli Gympie,Food service,QLD,4122
+L100050,Valley Espresso Caloundra,Convenience,QLD,4004
+L100051,Bean Roasters Ipswich,Convenience,QLD,4341
+L100052,Harbour Grocer Brisbane,Convenience,QLD,4553
+L100053,Bean Roasters Maroochydore,Convenience,QLD,4117
+L100054,Corner Kitchen Buderim,Food service,QLD,4461
+L100055,Corner Foodstore Cleveland,Convenience,QLD,4425
+L100056,Lighthouse Kitchen Toowoomba,Food service,QLD,4502
+L100057,Harbour Eatery Nambour,Food service,QLD,4413
+L100058,Lighthouse Cafe Gympie,Independent,QLD,4211
+L100059,Bean Espresso Caloundra,Food service,QLD,4517
+L100060,Station Cafe Nambour,Food service,QLD,4562
+L100061,Corner Foodstore Redcliffe,Food service,QLD,4375
+L100062,Station Roasters Gympie,Independent,QLD,4409
+L100063,Lighthouse Deli Redcliffe,Food service,QLD,4225
+L100064,Lighthouse Roasters Maroochydore,Convenience,QLD,4524
+L100065,Garden Kitchen Springfield,Convenience,QLD,4139
+L100066,Grind Roasters Toowoomba,Independent,QLD,4365
+L100067,Grind Grocer Nambour,Food service,QLD,4108
+L100068,Sunny Espresso Redcliffe,Independent,QLD,4189
+L100069,Main St Kitchen Springfield,Food service,QLD,4359
+L100070,Creek Grocer Ipswich,Food service,QLD,4279
+L100071,Bean Foodstore Caloundra,Food service,QLD,4301
+L100072,Palm Eatery Ipswich,Food service,QLD,4299
+L100073,Main St Espresso Buderim,Food service,QLD,4213
+L100074,Station Cafe Beaudesert,Independent,QLD,4291
+L100075,Sunny Deli Brisbane,Independent,QLD,4259
+L100076,Grind Deli Gympie,Independent,QLD,4268
+L100077,Garden Eatery Noosa,Independent,QLD,4536
+L100078,Bay Foodstore Maroochydore,Independent,QLD,4196
+L100079,Riverside Cafe Beaudesert,Food service,QLD,4453
+L100080,Harbour Deli Cleveland,Independent,QLD,4051
+L100081,Creek Grocer Cleveland,Food service,QLD,4493
+L100082,Valley Grocer Cleveland,Convenience,QLD,4523
+L100083,Lighthouse Grocer Caboolture,Independent,QLD,4117
+L100084,Valley Kitchen Nambour,Food service,QLD,4120
+L100085,Summit Foodstore Maroochydore,Independent,QLD,4034
+L100086,Market Eatery Beaudesert,Food service,QLD,4419
+L100087,Palm Cafe Gympie,Independent,QLD,4115
+L100088,Ridge Cafe Cleveland,Convenience,QLD,4492
+L100089,Valley Roasters Nambour,Food service,QLD,4430
+L100090,Main St Grocer Beaudesert,Food service,QLD,4302
+L100091,Bay Eatery Maroochydore,Food service,QLD,4052
+L100092,Bay Kitchen Cleveland,Independent,QLD,4452
+L100093,Valley Cafe Noosa,Food service,QLD,4277
+L100094,Sunny Cafe Caloundra,Independent,QLD,4514
+L100095,Sunny Foodstore Springfield,Food service,QLD,4615
+L100096,Bean Kitchen Ipswich,Independent,QLD,4239
+L100097,Village Foodstore Nambour,Convenience,QLD,4479
+L100098,Harbour Kitchen Cleveland,Independent,QLD,4533
+L100099,Bean Eatery Nambour,Food service,QLD,4238
+L100100,Corner Foodstore Toowoomba,Food service,QLD,4444
+L100101,Coastal Deli Redcliffe,Independent,QLD,4208
+L100102,Riverside Espresso Springfield,Food service,QLD,4020
+L100103,Coastal Deli Noosa,Food service,QLD,4221
+L100104,Summit Foodstore Caboolture,Independent,QLD,4259
+L100105,Valley Kitchen Nambour,Food service,QLD,4032
+L100106,Main St Cafe Springfield,Food service,QLD,4378
+L100107,Bay Roasters Toowoomba,Food service,QLD,4455
+L100108,Market Roasters Brisbane,Food service,QLD,4053
+L100109,Creek Deli Caloundra,Convenience,QLD,4198
+L100110,Village Grocer Redcliffe,Food service,QLD,4072
+L100111,Valley Foodstore Buderim,Food service,QLD,4357
+L100112,Village Espresso Maroochydore,Independent,QLD,4462
+L100113,Riverside Grocer Noosa,Food service,QLD,4427
+L100114,Sunny Deli Ipswich,Food service,QLD,4535
+L100115,Market Grocer Buderim,Independent,QLD,4052
+L100116,Coastal Foodstore Springfield,Food service,QLD,4555
+L100117,Village Grocer Beaudesert,Independent,QLD,4401
+L100118,Harbour Espresso Buderim,Convenience,QLD,4099
+L100119,Station Foodstore Beaudesert,Food service,QLD,4264
+L100120,Corner Cafe Springfield,Food service,QLD,4594
+L100121,Lighthouse Roasters Cleveland,Food service,QLD,4545
+L100122,Valley Kitchen Cleveland,Food service,QLD,4479
+L100123,Palm Kitchen Ipswich,Independent,QLD,4404
+L100124,Village Kitchen Gympie,Food service,QLD,4028
+L100125,Riverside Eatery Springfield,Independent,QLD,4013
+L100126,Sunny Deli Maroochydore,Independent,QLD,4102
+L100127,Harbour Kitchen Gympie,Food service,QLD,4350
+L100128,Bean Cafe Nambour,Food service,QLD,4427
+L100129,Station Kitchen Cleveland,Food service,QLD,4474
+L100130,Bean Roasters Maroochydore,Independent,QLD,4269
+L100131,Riverside Espresso Redcliffe,Food service,QLD,4012
+L100132,Grind Roasters Brisbane,Food service,QLD,4012
+L100133,Station Kitchen Maroochydore,Food service,QLD,4209
+L100134,Harbour Cafe Maroochydore,Food service,QLD,4595
+L100135,Valley Kitchen Maroochydore,Independent,QLD,4006
+L100136,Main St Roasters Springfield,Food service,QLD,4605
+L100137,Sunny Deli Brisbane,Food service,QLD,4312
+L100138,Hinterland Deli Buderim,Food service,QLD,4311
+L100139,Grind Foodstore Brisbane,Convenience,QLD,4121
+L100140,Station Foodstore Caboolture,Independent,QLD,4010
+L100141,Village Eatery Toowoomba,Independent,QLD,4325
+L100142,Grind Espresso Ipswich,Food service,QLD,4371
+L100143,Riverside Deli Toowoomba,Independent,QLD,4554
+L100144,Village Foodstore Caboolture,Independent,QLD,4565
+L100145,Station Espresso Gympie,Food service,QLD,4282
+L100146,Summit Deli Redcliffe,Food service,QLD,4500
+L100147,Market Eatery Caboolture,Food service,QLD,4382
+L100148,Riverside Deli Maroochydore,Independent,QLD,4403
+L100149,Corner Foodstore Cleveland,Convenience,QLD,4600
+L100150,Market Grocer Caloundra,Independent,QLD,4508
+L100151,Palm Deli Cleveland,Food service,QLD,4503
+L100152,Garden Foodstore Brisbane,Independent,QLD,4279
+L100153,Sunny Foodstore Ipswich,Convenience,QLD,4435
+L100154,Palm Espresso Caboolture,Independent,QLD,4222
+L100155,Summit Eatery Nambour,Food service,QLD,4506
+L100156,Market Deli Cleveland,Independent,QLD,4449
+L100157,Coastal Grocer Cleveland,Convenience,QLD,4138
+L100158,Main St Grocer Maroochydore,Food service,QLD,4537
+L100159,Harbour Eatery Maroochydore,Food service,QLD,4199
+L100160,Main St Espresso Buderim,Food service,QLD,4177
+L100161,Bean Grocer Buderim,Food service,QLD,4091
+L100162,Riverside Espresso Nambour,Convenience,QLD,4314
+L100163,Bean Cafe Maroochydore,Convenience,QLD,4543
+L100164,Grind Deli Cleveland,Independent,QLD,4521
+L100165,Garden Cafe Caboolture,Food service,QLD,4467
+L100166,Creek Roasters Maroochydore,Food service,QLD,4181
+L100167,Lighthouse Roasters Brisbane,Food service,QLD,4602
+L100168,Summit Deli Gympie,Food service,QLD,4221
+L100169,Bay Eatery Toowoomba,Food service,QLD,4474
+L100170,Summit Roasters Beaudesert,Food service,QLD,4127
+L100171,Lighthouse Roasters Cleveland,Food service,QLD,4113
+L100172,Grind Espresso Nambour,Food service,QLD,4140
+L100173,Bay Deli Redcliffe,Independent,QLD,4335
+L100174,Summit Cafe Nambour,Food service,QLD,4013
+L100175,Valley Foodstore Maroochydore,Independent,QLD,4044
+L100176,Creek Roasters Redcliffe,Independent,QLD,4529
+L100177,Creek Kitchen Caloundra,Independent,QLD,4210
+L100178,Market Eatery Beaudesert,Food service,QLD,4015
+L100179,Station Grocer Maroochydore,Convenience,QLD,4209
+L100180,Village Deli Nambour,Convenience,QLD,4228

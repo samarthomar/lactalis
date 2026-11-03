@@ -1,0 +1,107 @@
+{
+  "brand": "Sunvale Dairy Co.",
+  "brand_note": "Fictional brand made up for this demo",
+  "rules_note": "Checks configured for the demo from the Food Standards Code (Standards 1.2.3, 1.2.7 and Schedule 4, Country of Origin Labelling) and ACCC guidance. The regulatory team confirms every finding before artwork changes.",
+  "added_sugar_terms": ["sugar", "concentrated apple juice", "concentrated fruit juice", "honey", "glucose syrup", "maltodextrin", "deionised fruit juice"],
+  "cartons": [
+    {
+      "id": "C1",
+      "name": "Hazelnut Iced Coffee",
+      "size": "300 mL",
+      "colour": "#6B4A3A",
+      "accent": "#E9D6B8",
+      "front_text": "Hazelnut Iced Coffee",
+      "claims": ["Good source of protein"],
+      "serve_ml": 300,
+      "ingredients": [
+        {"text": "Milk (60%)", "allergen": "milk", "bold": true},
+        {"text": "water"},
+        {"text": "sugar"},
+        {"text": "coffee (2.5%)"},
+        {"text": "milk solids", "allergen": "milk", "bold": true},
+        {"text": "hazelnut paste (0.5%)", "allergen": "hazelnut", "bold": false},
+        {"text": "natural flavour"},
+        {"text": "stabilisers (460, 466)"},
+        {"text": "acidity regulator (339)"}
+      ],
+      "contains": ["milk"],
+      "nip": {
+        "Energy (kJ)": [255, 765],
+        "Protein (g)": [2.9, 8.7],
+        "Fat, total (g)": [1.6, 4.8],
+        "- saturated (g)": [1.0, 3.0],
+        "Carbohydrate (g)": [9.4, 28.2],
+        "- sugars (g)": [9.1, 27.3],
+        "Sodium (mg)": [45, 125]
+      },
+      "hsr": {"stars": 2.5, "energy_kj_per_100ml": 265, "spec_version": "v4", "spec_sugars_g": 9.1},
+      "cool": {"made_in": "Australia", "aus_pct": 90},
+      "origin_claim": null,
+      "storage": "Keep refrigerated at or below 4°C",
+      "date_mark": "Use by"
+    },
+    {
+      "id": "C2",
+      "name": "Farm Fresh Lite Milk",
+      "size": "2 L",
+      "colour": "#1F5F8B",
+      "accent": "#D7E8F3",
+      "front_text": "Farm Fresh Lite Milk",
+      "claims": ["Low fat"],
+      "serve_ml": 250,
+      "ingredients": [
+        {"text": "Skim milk", "allergen": "milk", "bold": true},
+        {"text": "milk", "allergen": "milk", "bold": true},
+        {"text": "reconstituted skim milk powder", "allergen": "milk", "bold": true}
+      ],
+      "contains": ["milk"],
+      "nip": {
+        "Energy (kJ)": [190, 475],
+        "Protein (g)": [3.6, 9.0],
+        "Fat, total (g)": [1.6, 4.0],
+        "- saturated (g)": [1.0, 2.5],
+        "Carbohydrate (g)": [5.1, 12.8],
+        "- sugars (g)": [5.1, 12.8],
+        "Sodium (mg)": [45, 113]
+      },
+      "hsr": {"stars": 4.5, "energy_kj_per_100ml": 190, "spec_version": "v2", "spec_sugars_g": 5.1},
+      "cool": {"made_in": "Australia", "aus_pct": 90},
+      "origin_claim": "100% Australian milk",
+      "storage": "Keep refrigerated at or below 4°C",
+      "date_mark": "Use by"
+    },
+    {
+      "id": "C3",
+      "name": "Kids Strawberry Milk",
+      "size": "250 mL",
+      "colour": "#C2416B",
+      "accent": "#F9DCE5",
+      "front_text": "Kids Strawberry Milk",
+      "claims": ["No added sugar"],
+      "serve_ml": 250,
+      "ingredients": [
+        {"text": "Milk (92%)", "allergen": "milk", "bold": true},
+        {"text": "concentrated apple juice"},
+        {"text": "strawberry puree (1%)"},
+        {"text": "natural flavour"},
+        {"text": "colour (beetroot red)"},
+        {"text": "stabiliser (407)"}
+      ],
+      "contains": ["milk"],
+      "nip": {
+        "Energy (kJ)": [300, 750],
+        "Protein (g)": [3.3, 8.3],
+        "Fat, total (g)": [3.2, 8.0],
+        "- saturated (g)": [2.1, 5.3],
+        "Carbohydrate (g)": [8.1, 20.3],
+        "- sugars (g)": [7.9, 19.8],
+        "Sodium (mg)": [42, 105]
+      },
+      "hsr": {"stars": 4.0, "energy_kj_per_100ml": 300, "spec_version": "v2", "spec_sugars_g": 6.5},
+      "cool": {"made_in": "Australia", "aus_pct": 95},
+      "origin_claim": null,
+      "storage": "Keep refrigerated at or below 4°C",
+      "date_mark": "Use by"
+    }
+  ]
+}

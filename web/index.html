@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demand Supply Control Tower</title>
+<style>/*__CSS__*/</style>
+</head>
+<body>
+<div class="login" id="login" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+  <div class="login-brand">
+    <img class="login-logo" src="__LOGO__" alt="Tech Mahindra">
+    <div class="login-hero">
+      <div class="login-kicker">Prepared for Lactalis Australia</div>
+      <h1>Demand Supply Control Tower</h1>
+      <p>One view from farm milk to the store shelf: forecast, plant, agents and labels.</p>
+      <ul>
+        <li>Data View</li>
+        <li>AI Forecast</li>
+        <li>Agent Workflows</li>
+      </ul>
+    </div>
+    <div class="login-foot">Demo on synthetic data · Queensland fresh milk · Nambour plant</div>
+  </div>
+  <div class="login-side">
+    <form class="login-card" id="loginForm" autocomplete="off" novalidate>
+      <img class="login-client" src="__LACTALIS_LOGO__" alt="Lactalis">
+      <h2 id="loginTitle">Sign in</h2>
+      <div class="sub">Administrator access</div>
+      <label>Username<input id="loginUser" value="admin" autocomplete="off" spellcheck="false"></label>
+      <label>Password<input id="loginPass" type="password" autocomplete="off"></label>
+      <label>Role<select id="loginRole"><option>Administrator</option><option>Demand planner</option><option>Plant planner</option></select></label>
+      <div class="login-err" id="loginErr" role="alert"></div>
+      <button class="btn primary login-btn" type="submit">Sign in</button>
+      <div class="tiny muted mt8">Demo sign-in only. In a pilot this would use Lactalis single sign-on.</div>
+    </form>
+  </div>
+</div>
+<header class="top">
+  <img class="logo" src="__LOGO__" alt="Tech Mahindra">
+  <div class="sep"></div>
+  <div>
+    <div class="t1">Demand Supply Control Tower</div>
+    <div class="t2">Prepared for Lactalis Australia<span class="t2x"> · Queensland fresh milk · Nambour plant</span></div>
+  </div>
+  <div class="spacer"></div>
+  <div class="pill" id="clock">Mon 12 Oct 2026 · 07:30</div>
+  <span class="badge" title="All data in this demo is synthetic">Synthetic data</span>
+  <button class="btn" id="btnAudit">Audit log<span class="count" id="auditCount">0</span></button>
+  <button class="btn primary" id="btnChat">Ask the agents</button>
+  <button class="btn ghost" id="btnReset" title="Reset the demo" aria-label="Reset the demo"><span class="rl">Reset</span><span class="ri" aria-hidden="true">↺</span></button>
+  <button class="btn ghost user" id="btnUser" title="Sign out"><span class="av" id="userAv">A</span><span class="un" id="userName">Admin</span><span class="so"> · Sign out</span></button>
+</header>
+<nav id="scenes" aria-label="Demo scenes"></nav>
+<main id="main"></main>
+<footer>Synthetic data shaped like a Queensland fresh-milk business. The forecasting model is real and trained on that data; agent answers are pre-configured for this demo. Tech Mahindra · Prepared for Lactalis Australia.</footer>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="chat" aria-label="Ask the agents">
+  <div class="dh">
+    <div><h3>Ask the agents</h3><div class="tiny muted">Answers are pre-configured from the model results for this demo</div></div>
+    <button class="btn ghost small" data-close>Close</button>
+  </div>
+  <div class="db" id="chatLog"></div>
+  <div class="df">
+    <div class="chips" id="chatChips" style="margin-bottom:8px"></div>
+    <form class="chat-in" id="chatForm" autocomplete="off">
+      <input id="chatInput" placeholder="Ask about the forecast, plant, milk or data…" aria-label="Question">
+      <button class="btn primary" type="submit">Ask</button>
+    </form>
+  </div>
+</aside>
+<aside class="drawer" id="audit" aria-label="Audit log">
+  <div class="dh">
+    <div><h3>Audit log</h3><div class="tiny muted">Every agent action and every human decision</div></div>
+    <button class="btn ghost small" data-close>Close</button>
+  </div>
+  <div class="db" id="auditLog"></div>
+</aside>
+<div class="toast" id="toast"></div>
+
+<script>window.DEMO = /*__DATA__*/;</script>
+<script>/*__JS__*/</script>
+</body>
+</html>

@@ -1,0 +1,1844 @@
+{
+ "meta": {
+  "built_from": "build/model_output.json and data/*.csv",
+  "today": "2026-10-12",
+  "disclosure": "Agent answers are pre-configured from the model results for this demo. In production a live AI agent would generate them from your data.",
+  "data": "synthetic"
+ },
+ "briefing": {
+  "greeting": "Good morning. Mon 12 Oct: 3 things need your attention today.",
+  "items": [
+   {
+    "alert": "A1",
+    "text": "Heat plus the 40% off Ice Break Iced Coffee 500mL promotion: plan 595 cases for National Retailer A on Wed 14 Oct, not 397."
+   },
+   {
+    "alert": "A4",
+    "text": "Nambour line 3 is over capacity on Thu 15 Oct and Fri 16 Oct. Make 562 cases earlier on spare time; no overtime needed."
+   },
+   {
+    "alert": "A5",
+    "text": "Milk silos run about 3,143 L short on Fri 16 Oct. Moving one white-milk run to Sat 17 Oct fixes it at no extra cost."
+   }
+  ],
+  "also": [
+   {
+    "alert": "A2",
+    "text": "Today's method under-calls Mon 12 Oct because it copies the King's Birthday holiday"
+   },
+   {
+    "alert": "A3",
+    "text": "Cut Ice Break Iced Coffee 750mL, Oak Iced Coffee 600mL, Breaka Iced Coffee 750mL, Ice Break Iced Coffee Less Sugar 500mL at National Retailer A during the promotion"
+   },
+   {
+    "alert": "A6",
+    "text": "Old Fonterra customer codes still on 7% of orders"
+   }
+  ],
+  "footer": "Every suggestion needs a person to approve it. Answers on this screen are pre-configured for the demo."
+ },
+ "alerts": [
+  {
+   "id": "A1",
+   "agent": "Demand agent",
+   "severity": "high",
+   "scene": "forecast",
+   "title": "Ice Break Iced Coffee 500mL at National Retailer A: plan 595 cases for Wed 14 Oct, not 397",
+   "what": "Heat (Wed 14 Oct, Thu 15 Oct, Fri 16 Oct) arrives in the same week as the 40% off promotion (Wed 14 Oct to Tue 20 Oct). The AI forecast is 595 cases for Wed 14 Oct; today's method says 397.",
+   "why": [
+    "Normal Wednesday: 321 cases",
+    "Promotion 40% off: +206 cases",
+    "Heat 34°C (normal 26°C): +68 cases"
+   ],
+   "confidence": {
+    "level": "Medium",
+    "range": "420 to 792 cases (80% range)",
+    "backtest": "On promotion days the forecast error was 17% vs 28% for today's method"
+   },
+   "impact": "Over the promotion week the AI expects 4,145 cases vs 2,386 from today's method: 1,759 cases (about A$26k of sales at list price) at risk of going short.",
+   "recommendation": "Raise the Ice Break Iced Coffee 500mL plan for National Retailer A to the AI forecast for Wed 14 Oct to Tue 20 Oct.",
+   "approve": {
+    "result": "Plan updated: 4,145 cases over the promotion week. Nambour line 3 load is checked next (see the supply alert).",
+    "audit": "Approved AI forecast for ICB-IC-500 at RET-A, 2026-10-14 to 2026-10-20"
+   },
+   "reject": {
+    "result": "Plan stays at today's method (2,386 cases). Expected shortfall about 1,759 cases. The agent will flag this again if orders run ahead of plan.",
+    "audit": "Rejected AI forecast for ICB-IC-500 at RET-A; reason recorded by planner"
+   },
+   "data": {
+    "sku": "ICB-IC-500",
+    "customer": "RET-A",
+    "date": "2026-10-14",
+    "forecast": 595,
+    "today_method": 397,
+    "week_ai": 4145,
+    "week_today": 2386
+   }
+  },
+  {
+   "id": "A2",
+   "agent": "Demand agent",
+   "severity": "medium",
+   "scene": "forecast",
+   "title": "Today's method under-calls Mon 12 Oct because it copies the King's Birthday holiday",
+   "what": "Today's method copies last Mon 5 Oct (King's Birthday, a public holiday) and plans 129 cases of Ice Break Iced Coffee 500mL for National Retailer A. The AI knows it was a holiday and forecasts 413.",
+   "why": [
+    "Holidays were the weakest point of today's method in the back-test: 87% error vs 20% for the AI"
+   ],
+   "confidence": {
+    "level": "Medium",
+    "range": "292 to 551 cases (80% range)",
+    "backtest": "On public holidays and the day before the forecast error was 20% vs 87% for today's method"
+   },
+   "impact": "284 cases more for Mon 12 Oct on this one product and customer.",
+   "recommendation": "Use the AI forecast for the week after any public holiday.",
+   "approve": {
+    "result": "Rule saved: the week after a public holiday uses the AI forecast by default.",
+    "audit": "Approved: AI forecast used after public holidays"
+   },
+   "reject": {
+    "result": "No change. The planner adjusts post-holiday weeks by hand as today.",
+    "audit": "Rejected post-holiday rule; reason recorded by planner"
+   },
+   "data": {
+    "date": "2026-10-12",
+    "forecast": 413,
+    "today_method": 129,
+    "holiday": "King's Birthday",
+    "holiday_date": "2026-10-05"
+   }
+  },
+  {
+   "id": "A3",
+   "agent": "Shelf-life agent",
+   "severity": "medium",
+   "scene": "forecast",
+   "title": "Cut Ice Break Iced Coffee 750mL, Oak Iced Coffee 600mL, Breaka Iced Coffee 750mL, Ice Break Iced Coffee Less Sugar 500mL at National Retailer A during the promotion",
+   "what": "Shoppers switch to the discounted Ice Break Iced Coffee 500mL. Its neighbours sell less: Breaka Iced Coffee 750mL loses about 24 to 31 cases a weekday. Today's method does not see this and would plan 258 cases too many.",
+   "why": [
+    "Ice Break Iced Coffee 750mL: 311 fewer cases over the week",
+    "Oak Iced Coffee 600mL: 170 fewer cases over the week",
+    "Breaka Iced Coffee 750mL: 160 fewer cases over the week",
+    "Ice Break Iced Coffee Less Sugar 500mL: 120 fewer cases over the week",
+    "Back-test error on products next to a promotion: 34% today vs 16% with the AI"
+   ],
+   "confidence": {
+    "level": "Medium",
+    "range": "Based on past promotions in the same product family",
+    "backtest": "Error on products next to a promotion: 16%"
+   },
+   "impact": "About A$2,873 of stock (at cost) at risk of being written off. With 16 days of shelf life and customers needing 80% left, unsold stock has about 3 days to ship.",
+   "recommendation": "Lower the plan for these products at National Retailer A to the AI forecast for the promotion week.",
+   "approve": {
+    "result": "Plans lowered by 258 cases; frees Nambour line 3 capacity on the hot days.",
+    "audit": "Approved lower sibling plans at RET-A for the promotion week"
+   },
+   "reject": {
+    "result": "No change. Stock levels for these products will be watched daily for ageing.",
+    "audit": "Rejected sibling plan cut; reason recorded by planner"
+   },
+   "data": {
+    "skus": [
+     "ICB-IC-750",
+     "OAK-IC-600",
+     "BRK-IC-750",
+     "ICB-LS-500"
+    ],
+    "lost_cases": {
+     "ICB-IC-750": 311,
+     "OAK-IC-600": 170,
+     "BRK-IC-750": 160,
+     "ICB-LS-500": 120
+    },
+    "over_cases": {
+     "ICB-IC-750": 88,
+     "OAK-IC-600": 35,
+     "BRK-IC-750": 84,
+     "ICB-LS-500": 51
+    },
+    "cost_aud": 2873
+   }
+  },
+  {
+   "id": "A4",
+   "agent": "Supply agent",
+   "severity": "high",
+   "scene": "supply",
+   "title": "Nambour line 3 is over capacity on Thu 15 Oct and Fri 16 Oct",
+   "what": "Line 3 (flavoured milk and iced coffee) needs 104% on Thu 15 Oct, 104% on Fri 16 Oct: 562 cases above its 7,200 cases a day.",
+   "why": [
+    "Promotion and heat both land on the iced coffee range",
+    "Line 3 has 1,975 spare cases on Tue 13 Oct and Wed 14 Oct before the peak"
+   ],
+   "confidence": {
+    "level": "Medium",
+    "range": "556 to 1,047 cases (80% range)",
+    "backtest": "On hot days (over 32°C) the forecast error was 16% vs 23% for today's method"
+   },
+   "impact": "Without action about 562 cases of iced coffee cannot be made in time for the hot days.",
+   "options": [
+    {
+     "name": "Make 562 cases earlier on Tue 13 Oct and Wed 14 Oct",
+     "detail": "Uses spare line 3 time; stock is made 1 to 3 days earlier and still has more than 80% of its 21-day shelf life when shipped. No overtime.",
+     "recommended": true
+    },
+    {
+     "name": "Book an extra shift on Thu 15 Oct",
+     "detail": "Adds up to 2,000 cases a day; overtime cost; keeps the plan as is.",
+     "recommended": false
+    }
+   ],
+   "recommendation": "Make 562 cases earlier on spare line 3 time; keep the extra shift as back-up.",
+   "approve": {
+    "result": "Production plan moved: line 3 back under 100% on Thu 15 Oct and Fri 16 Oct. Milk is used a day or two earlier; silos stay above zero on those days.",
+    "audit": "Approved: 562 cases of line 3 production pulled forward"
+   },
+   "reject": {
+    "result": "Plan unchanged. The agent books a provisional extra shift request for the production manager.",
+    "audit": "Rejected pull-forward; extra shift request raised instead"
+   },
+   "data": {
+    "over": {
+     "2026-10-15": 104.0,
+     "2026-10-16": 103.8
+    },
+    "cases_over": 562,
+    "spare_before": {
+     "2026-10-13": 1129,
+     "2026-10-14": 846
+    }
+   }
+  },
+  {
+   "id": "A5",
+   "agent": "Supply agent",
+   "severity": "high",
+   "scene": "supply",
+   "title": "Raw milk silos run about 3,143 L short on Fri 16 Oct",
+   "what": "Farm intake drops about 3% on hot days (Thu 15 Oct, Fri 16 Oct, Sat 17 Oct) while demand peaks. The silo balance goes below zero on Fri 16 Oct.",
+   "why": [
+    "Heat stress lowers cow yields",
+    "Promotion and heat raise demand on Wed 14 Oct, Thu 15 Oct, Fri 16 Oct",
+    "Assumption: silos start the week at 0.8 days of intake"
+   ],
+   "confidence": {
+    "level": "Medium",
+    "range": "Silo starting level is an assumption",
+    "backtest": "Intake is planned from the last 28 days of farm deliveries"
+   },
+   "impact": "Shortfall of about 3,143 L on Fri 16 Oct.",
+   "options": [
+    {
+     "name": "Move 300 cases of Pauls Full Cream Milk 2L from Fri 16 Oct to Sat 17 Oct",
+     "detail": "Saves about 5,400 L on Fri 16 Oct; the silo ends the day at about 2,257 L. Line 1 on Sat 17 Oct goes to 67% and the silo still ends Sat 17 Oct at 24,274 L. Stock cover at the warehouse carries Fri 16 Oct orders. No extra cost; the Nambour scheduler confirms.",
+     "recommended": true
+    },
+    {
+     "name": "Buy spot milk",
+     "detail": "Order about 5,000 L from a third-party supplier for delivery on Thu 15 Oct. Extra cost.",
+     "recommended": false
+    }
+   ],
+   "recommendation": "Move the Pauls Full Cream Milk 2L run to Sat 17 Oct; keep a spot milk quote as back-up.",
+   "approve": {
+    "result": "Production plan updated: 300 cases of Pauls Full Cream Milk 2L moved to Sat 17 Oct. Silo on Fri 16 Oct now ends at about 2,257 L.",
+    "audit": "Approved: 300 cases of PAU-FC-2L moved from 2026-10-16 to 2026-10-17"
+   },
+   "reject": {
+    "result": "No change. Risk stays open on the supply dashboard.",
+    "audit": "Rejected milk plan; reason recorded by planner"
+   },
+   "data": {
+    "date": "2026-10-16",
+    "short_l": 3143,
+    "defer_sku": "PAU-FC-2L",
+    "defer_cases": 300,
+    "defer_litres": 5400,
+    "to_date": "2026-10-17",
+    "silo_after_l": 2257,
+    "l1_next_pct": 67.2,
+    "spot_l": 5000
+   }
+  },
+  {
+   "id": "A6",
+   "agent": "Order agent",
+   "severity": "medium",
+   "scene": "data",
+   "title": "Old Fonterra customer codes still on 7% of orders",
+   "what": "Since 1 Apr 2026 some National Retailer B and Independent Grocers orders arrive under old Fonterra codes (FON-QLD-0412, FON-QLD-0877). The share fell from 17% in April to 7% in the last 4 weeks (858 order lines).",
+   "why": [
+    "8 orders were keyed in twice (old and new code) and came back as 273 cases of returns",
+    "9 products have a different old Fonterra price for National Retailer B (-6% to +4%)"
+   ],
+   "confidence": {
+    "level": "High",
+    "range": "Codes matched to customers in the record-matching step",
+    "backtest": "Matching accuracy on auto-matches: 100.0%"
+   },
+   "impact": "Duplicate returns cost about A$7,617 so far; legacy orders split one customer's demand across two codes, which hides it from planning.",
+   "recommendation": "Map the old codes to the Lactalis customers on intake, hold any order that repeats one under the other code, and use the Lactalis price list.",
+   "approve": {
+    "result": "Mapping rule active: old codes are translated on intake; possible duplicates are held for a check.",
+    "audit": "Approved legacy code mapping and duplicate hold"
+   },
+   "reject": {
+    "result": "No change. Customer service keeps checking old codes by hand.",
+    "audit": "Rejected legacy code mapping; reason recorded"
+   },
+   "data": {
+    "legacy_share_first_pct": 17.0,
+    "legacy_share_now_pct": 6.9,
+    "duplicate_orders": 8,
+    "duplicate_return_cases": 273,
+    "price_conflicts": 9
+   }
+  }
+ ],
+ "qa": [
+  {
+   "id": "Q1",
+   "topic": "Forecast",
+   "question": "Why is the Ice Break Iced Coffee 500mL forecast so high on Wed 14 Oct?",
+   "keywords": [
+    "why",
+    "high",
+    "so many",
+    "wednesday",
+    "ice break",
+    "595",
+    "explain",
+    "driver",
+    "reason"
+   ],
+   "answer": "Three things add up. A normal Wednesday at National Retailer A is 321 cases. The 40% off promotion adds 206. The 34°C heat (normal is 26°C) adds 68. Total 595 cases, likely range 420 to 792. Today's method says 397 because it only copies last week.",
+   "show": "waterfall"
+  },
+  {
+   "id": "Q2",
+   "topic": "What-if",
+   "question": "What if it is only 28°C on Wed 14 Oct?",
+   "keywords": [
+    "what if",
+    "temperature",
+    "degrees",
+    "cooler",
+    "hotter",
+    "weather",
+    "cool",
+    "heat",
+    "°c"
+   ],
+   "template": "temp",
+   "answer": "At {temp}°C with the promotion, all customers together need about {iced} cases of iced coffee on Wed 14 Oct, and {hero} cases of Ice Break Iced Coffee 500mL. At the forecast 34°C it is 4,532 and 2,086.",
+   "show": "whatif"
+  },
+  {
+   "id": "Q3",
+   "topic": "What-if",
+   "question": "What if the promotion is 25% off instead of 40%?",
+   "keywords": [
+    "what if",
+    "promotion",
+    "discount",
+    "deeper",
+    "smaller",
+    "% off",
+    "depth",
+    "percent"
+   ],
+   "template": "depth",
+   "answer": "At {depth}% off, National Retailer A needs about {hero_c} cases of Ice Break Iced Coffee 500mL on Wed 14 Oct (595 at 40% off, {none} with no promotion). Iced coffee across all customers: {iced} cases. The size of the lift is learned from 263 past promotions.",
+   "show": "whatif"
+  },
+  {
+   "id": "Q4",
+   "topic": "Accuracy",
+   "question": "How accurate is the forecast?",
+   "keywords": [
+    "accurate",
+    "accuracy",
+    "error",
+    "wape",
+    "trust",
+    "reliable",
+    "how well",
+    "back-test",
+    "backtest",
+    "any good",
+    "confident",
+    "confidence",
+    "sure",
+    "how sure"
+   ],
+   "answer": "We replayed 2026-01-01 to 2026-10-11 day by day, forecasting 14 days ahead with forecast (not actual) weather. Today's method was 74.2% accurate; the AI was 84.0%. That is 38% less error. This is synthetic data: on real data we would aim for at least 20% less error in the pilot.",
+   "show": "accuracy"
+  },
+  {
+   "id": "Q5",
+   "topic": "Accuracy",
+   "question": "Where does the AI help most?",
+   "keywords": [
+    "where",
+    "help most",
+    "biggest",
+    "best",
+    "gain",
+    "improve",
+    "situation",
+    "segment"
+   ],
+   "answer": "Biggest gains: public holidays and the day before 87% to 20% error; products next to a promotion 34% to 16% error; school holidays 31% to 15% error; all days 26% to 16% error. These are the days when copying last week goes wrong.",
+   "show": "segments"
+  },
+  {
+   "id": "Q6",
+   "topic": "Forecast",
+   "question": "Why does today's method get Mon 12 Oct wrong?",
+   "keywords": [
+    "monday",
+    "today",
+    "holiday",
+    "holidays",
+    "public holiday",
+    "low",
+    "king's birthday",
+    "kings birthday",
+    "wrong",
+    "copy",
+    "last week",
+    "129"
+   ],
+   "answer": "It copies last Mon 5 Oct, which was the King's Birthday public holiday, so it plans only 129 cases of Ice Break Iced Coffee 500mL for National Retailer A. The AI knows it was a holiday and forecasts 413. In the back-test, holidays and the day before had 87% error with today's method and 20% with the AI.",
+   "show": "monday"
+  },
+  {
+   "id": "Q7",
+   "topic": "Forecast",
+   "question": "Which products lose sales because of the promotion?",
+   "keywords": [
+    "lose",
+    "cannibal",
+    "sibling",
+    "breaka",
+    "other products",
+    "switch",
+    "neighbour",
+    "steal"
+   ],
+   "answer": "Shoppers switch to the discounted Ice Break Iced Coffee 500mL at National Retailer A. Over the promotion week: Ice Break Iced Coffee 750mL: 311 fewer cases over the week; Oak Iced Coffee 600mL: 170 fewer cases over the week; Breaka Iced Coffee 750mL: 160 fewer cases over the week; Ice Break Iced Coffee Less Sugar 500mL: 120 fewer cases over the week. Today's method would plan 258 cases too many, about A$2,873 at cost at risk of write-off.",
+   "show": "siblings"
+  },
+  {
+   "id": "Q8",
+   "topic": "Supply",
+   "question": "Can Nambour make enough this week?",
+   "keywords": [
+    "nambour",
+    "capacity",
+    "line",
+    "make enough",
+    "production",
+    "plant",
+    "shift",
+    "overtime"
+   ],
+   "answer": "Lines 1 and 2 are fine. Line 3 (flavoured milk and iced coffee) is over on Thu 15 Oct (104%) and Fri 16 Oct (104%), 562 cases in total. It has 1,975 spare cases before that, so making them earlier avoids overtime. An extra shift adds up to 2,000 cases a day if needed.",
+   "show": "lines"
+  },
+  {
+   "id": "Q9",
+   "topic": "Supply",
+   "question": "Do we have enough raw milk?",
+   "keywords": [
+    "milk",
+    "silo",
+    "raw milk",
+    "farm",
+    "intake",
+    "enough milk",
+    "supply",
+    "litres"
+   ],
+   "answer": "Not quite. Hot days cut farm intake by about 3%, and demand peaks at the same time. The silos end Fri 16 Oct about 3,143 L short. Moving 300 cases of Pauls Full Cream Milk 2L to Sat 17 Oct, when intake recovers and line 1 has room, leaves about 2,257 L. Buying about 5,000 L of spot milk is the back-up. Note: the silo starting level is an assumption.",
+   "show": "milk"
+  },
+  {
+   "id": "Q10",
+   "topic": "Value",
+   "question": "How much could this save?",
+   "keywords": [
+    "save",
+    "saving",
+    "value",
+    "money",
+    "dollar",
+    "roi",
+    "benefit",
+    "worth",
+    "cost",
+    "business case",
+    "believe",
+    "36%",
+    "write-off saving"
+   ],
+   "answer": "We replayed 2026-01-01 to 2026-10-11 (284 days) through the same stock rules, changing only the forecast. Write-offs fell from 1.63% to 1.04% of production (36% fewer) and orders filled rose from 98.73% to 99.84%. On this synthetic Queensland range that is about A$339k a year and 324,757 L of milk not wasted. Real gains will be smaller; the pilot target is at least 15% fewer write-offs.",
+   "show": "value"
+  },
+  {
+   "id": "Q11",
+   "topic": "Data",
+   "question": "Which orders still use old Fonterra codes?",
+   "keywords": [
+    "fonterra",
+    "legacy",
+    "old code",
+    "codes",
+    "customer code",
+    "acquisition",
+    "integration"
+   ],
+   "answer": "Since 1 Apr 2026 some National Retailer B and Independent Grocers orders arrive under old Fonterra codes (FON-QLD-0412, FON-QLD-0877). The share fell from 17% in April to 7% in the last 4 weeks (858 order lines). 8 orders were keyed in twice (old and new code) and came back as 273 cases of returns.",
+   "show": "legacy"
+  },
+  {
+   "id": "Q12",
+   "topic": "Data",
+   "question": "How many Fonterra customers match our records?",
+   "keywords": [
+    "match",
+    "matching",
+    "customer",
+    "customers",
+    "duplicate customer",
+    "master data",
+    "records",
+    "same customer",
+    "merge"
+   ],
+   "answer": "We compared 127 Fonterra customer records with 183 Lactalis ones. 69 matched automatically (100.0% correct when checked against the answer key), 2 need a person to check, and 56 look like new customers. Overall 98.6% of the real pairs were found.",
+   "show": "matching"
+  },
+  {
+   "id": "Q13",
+   "topic": "Data",
+   "question": "Are there price conflicts?",
+   "keywords": [
+    "price",
+    "prices",
+    "fonterra prices",
+    "old prices",
+    "pricing",
+    "conflict",
+    "price list",
+    "different price"
+   ],
+   "answer": "Yes. 9 products have an old Fonterra price for National Retailer B that differs from the Lactalis list by -6% to +4%. The largest gap is Breaka Iced Coffee 750mL. The agent flags these for the commercial team; it does not change prices.",
+   "show": "prices"
+  },
+  {
+   "id": "Q14",
+   "topic": "Waste",
+   "question": "What are we throwing away today?",
+   "keywords": [
+    "write-off",
+    "writeoff",
+    "waste",
+    "throw",
+    "expired",
+    "short-dated",
+    "spoil",
+    "dumped"
+   ],
+   "answer": "In the last 12 months (synthetic): short-dated / expired in DC 89,394 cases; damaged in handling 1,999 cases; customer return: duplicate order under legacy Fonterra code 273 cases. Most short-dated stock is Pauls Full Cream Milk 2L, Pauls Reduced Fat Milk 2L, Pauls Full Cream Milk 3L.",
+   "show": "writeoffs"
+  },
+  {
+   "id": "Q15",
+   "topic": "How it works",
+   "question": "What data does the model use?",
+   "keywords": [
+    "data",
+    "input",
+    "features",
+    "signals",
+    "use",
+    "model",
+    "how does it work",
+    "inputs",
+    "know about"
+   ],
+   "answer": "Order history by product, customer and day, plus three outside signals: the weather forecast, school and public holidays, and the promotion calendar (including promotions on neighbouring products). The model is LightGBM (Poisson), SKU x customer x day. Each signal was tested on and off: for iced coffee the error went from 26.0% with history only to 16.4% with all three.",
+   "show": "signals"
+  },
+  {
+   "id": "Q16",
+   "topic": "How it works",
+   "question": "Who decides? Does the AI change the plan by itself?",
+   "keywords": [
+    "decide",
+    "approve",
+    "control",
+    "human",
+    "automatic",
+    "by itself",
+    "on its own",
+    "override",
+    "replace",
+    "planner",
+    "planners",
+    "accountable",
+    "responsible",
+    "if it's wrong",
+    "if it is wrong",
+    "audit",
+    "audit trail",
+    "changed",
+    "after i approved"
+   ],
+   "answer": "No. Agents suggest; a planner approves or rejects every change, and each decision is written to the audit log with the reason. Rules such as minimum shelf life, line capacity and price lists are never changed by an agent.",
+   "show": "audit"
+  },
+  {
+   "id": "Q17",
+   "topic": "How it works",
+   "question": "Is this real Lactalis data?",
+   "keywords": [
+    "real",
+    "synthetic",
+    "fake",
+    "actual data",
+    "lactalis data",
+    "made up",
+    "genuine",
+    "is this our data",
+    "is this your data",
+    "live",
+    "live ai",
+    "pre-configured",
+    "scripted",
+    "canned"
+   ],
+   "answer": "No. The data is synthetic, built to look like a Queensland fresh milk range after the Fonterra purchase and the South Brisbane closure. The forecast model is real and was trained on that data. Agent answers in this demo are pre-configured; in a pilot they would come from a live AI model reading your data.",
+   "show": null
+  },
+  {
+   "id": "Q18",
+   "topic": "Next steps",
+   "question": "What would a pilot look like?",
+   "keywords": [
+    "pilot",
+    "next step",
+    "start",
+    "timeline",
+    "phase",
+    "how long",
+    "implement",
+    "roll out"
+   ],
+   "answer": "Start with one region and the fresh milk and iced coffee range. Connect order history, the promotion calendar, weather and plant data; run the forecast next to today's method; let planners approve agent suggestions. Pilot targets: at least 20% less forecast error and at least 15% fewer write-offs, measured on real data.",
+   "show": null
+  },
+  {
+   "id": "Q19",
+   "topic": "Forecast",
+   "question": "Which days are hot this week?",
+   "keywords": [
+    "hot",
+    "hottest",
+    "heatwave",
+    "weather forecast",
+    "temperature this week",
+    "warm"
+   ],
+   "answer": "Forecast maximums in Brisbane: Mon 12 Oct 28°C, Tue 13 Oct 30°C, Wed 14 Oct 34°C, Thu 15 Oct 35°C, Fri 16 Oct 33°C, Sat 17 Oct 29°C, Sun 18 Oct 27°C. Days over 32°C: Wed 14 Oct, Thu 15 Oct, Fri 16 Oct. On hot days the AI had 16% error vs 23% for today's method.",
+   "show": "weather"
+  },
+  {
+   "id": "Q20",
+   "topic": "Forecast",
+   "question": "What is the total forecast for the promotion week?",
+   "keywords": [
+    "total",
+    "promotion week",
+    "week",
+    "how many cases",
+    "sum",
+    "overall"
+   ],
+   "answer": "For Ice Break Iced Coffee 500mL at National Retailer A, Wed 14 Oct to Tue 20 Oct: 4,145 cases (AI) vs 2,386 (today's method). Across all products and customers the AI forecasts 101,356 cases that week.",
+   "show": "forecast"
+  },
+  {
+   "id": "Q21",
+   "topic": "Labels",
+   "question": "What does the label check look for?",
+   "keywords": [
+    "label",
+    "labels",
+    "carton",
+    "artwork",
+    "allergen",
+    "allergens",
+    "health star",
+    "hsr",
+    "claim",
+    "claims",
+    "pack",
+    "compliant",
+    "compliance",
+    "wrong with the label",
+    "label check"
+   ],
+   "answer": "Allergens in bold and in the 'Contains' statement, nutrition claims against their conditions (for example 'good source of protein' needs 10 g per serve), the Health Star Rating graphic against the nutrition panel and the current recipe, per-serve arithmetic, origin wording, and 'fresh' wording on milk with reconstituted ingredients. The cartons here are a fictional brand.",
+   "show": "label"
+  },
+  {
+   "id": "Q22",
+   "topic": "Labels",
+   "question": "Does the label agent approve artwork by itself?",
+   "keywords": [
+    "sign off",
+    "signs off",
+    "approve artwork",
+    "regulatory",
+    "legal",
+    "print"
+   ],
+   "answer": "No. It finds and explains issues; the regulatory reviewer sends each one to the team that owns the fix (food safety, marketing, nutrition, legal, procurement) or marks it not an issue, and every decision is logged. It makes the check faster and more consistent; it does not replace sign-off.",
+   "show": "label"
+  },
+  {
+   "id": "Q23",
+   "topic": "How it works",
+   "question": "How does this connect to SAP?",
+   "keywords": [
+    "sap",
+    "erp",
+    "system",
+    "systems",
+    "connect",
+    "connects",
+    "it team",
+    "write back"
+   ],
+   "answer": "In this demo the SAP step is simulated: each approval shows the change it would send. In a pilot the agents start read-only, using extracts of orders, the material and customer masters and the production plan. Writing approved changes back uses standard SAP interfaces agreed with your IT and security teams, and only after a person approves.",
+   "show": "audit"
+  },
+  {
+   "id": "Q24",
+   "topic": "Next steps",
+   "question": "What would you need from Lactalis?",
+   "keywords": [
+    "need from",
+    "from us",
+    "from lactalis",
+    "data needed",
+    "requirements",
+    "prerequisites",
+    "access",
+    "what do you need"
+   ],
+   "answer": "About two years of orders by product, customer and day; the promotion calendar; plant line capacities and the production plan; milk intake; write-offs; and both customer lists. Plus a few hours a week from a demand planner and a supply planner to review suggestions, and read-only data access agreed with IT.",
+   "show": null
+  },
+  {
+   "id": "Q25",
+   "topic": "Next steps",
+   "question": "Can it cover other regions and products?",
+   "keywords": [
+    "other states",
+    "states",
+    "region",
+    "regions",
+    "national",
+    "cheese",
+    "yoghurt",
+    "yogurt",
+    "categories",
+    "scale",
+    "victoria",
+    "nsw"
+   ],
+   "answer": "Yes. The same approach runs per region and per product range. The pilot starts with Queensland fresh milk and iced coffee because short shelf life makes errors costly. Other regions are added once accuracy is proven on real data; longer-life ranges such as cheese and yoghurt use the same models with their own shelf-life rules.",
+   "show": null
+  },
+  {
+   "id": "Q26",
+   "topic": "How it works",
+   "question": "Is our data safe?",
+   "keywords": [
+    "safe",
+    "data safe",
+    "secure",
+    "security",
+    "privacy",
+    "confidential",
+    "data protection",
+    "where is the data",
+    "cyber"
+   ],
+   "answer": "In a pilot the data stays in an environment your IT security team approves, with role-based access and every action logged. Your data is not used to train public AI models. The exact set-up is agreed with your IT team before any data moves.",
+   "show": null
+  },
+  {
+   "id": "Q27",
+   "topic": "Next steps",
+   "question": "What does the pilot cost?",
+   "keywords": [
+    "how much does this cost",
+    "how much does it cost",
+    "what does it cost",
+    "what will it cost",
+    "cost us",
+    "fees",
+    "commercials",
+    "pricing of",
+    "investment",
+    "budget"
+   ],
+   "answer": "The commercial proposal covers that separately. The pilot is fixed in scope and time, and its value is measured against today's method on your own data before any wider roll-out.",
+   "show": null
+  },
+  {
+   "id": "Q28",
+   "topic": "How it works",
+   "question": "Why this forecasting model?",
+   "keywords": [
+    "lightgbm",
+    "algorithm",
+    "which model",
+    "why this model",
+    "machine learning",
+    "newer",
+    "llm",
+    "chatgpt",
+    "gpt",
+    "neural"
+   ],
+   "answer": "LightGBM is proven for demand forecasting at this scale: it handles thousands of product, customer and day combinations, retrains daily in minutes and shows which signals drove each number. Language models are used to explain results in plain words, not to produce the numbers.",
+   "show": "waterfall"
+  }
+ ],
+ "fallback": {
+  "message": "That question isn't in the demo set yet. In a live system the agent would answer it from your data. Closest questions I can answer:",
+  "suggest": 3,
+  "stopwords": [
+   "the",
+   "a",
+   "an",
+   "is",
+   "are",
+   "of",
+   "for",
+   "to",
+   "in",
+   "on",
+   "and",
+   "it",
+   "we",
+   "do",
+   "does",
+   "what",
+   "how",
+   "this",
+   "that",
+   "our",
+   "be",
+   "can",
+   "i",
+   "you",
+   "will",
+   "with",
+   "at",
+   "by",
+   "me",
+   "show",
+   "tell"
+  ]
+ },
+ "whatif_lookup": {
+  "date": "2026-10-14",
+  "temps": [
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33,
+   34,
+   35,
+   36,
+   37,
+   38,
+   39,
+   40,
+   41,
+   42
+  ],
+  "depths": [
+   0.0,
+   0.25,
+   0.33,
+   0.4,
+   0.5
+  ],
+  "hero": {
+   "0.0": [
+    1407,
+    1407,
+    1414,
+    1422,
+    1444,
+    1446,
+    1450,
+    1443,
+    1439,
+    1445,
+    1443,
+    1454,
+    1534,
+    1579,
+    1604,
+    1638,
+    1749,
+    1759,
+    1777,
+    1832,
+    1871,
+    1921,
+    1932,
+    1948,
+    2027,
+    2048,
+    2048,
+    2048,
+    2048
+   ],
+   "0.25": [
+    1575,
+    1575,
+    1582,
+    1591,
+    1612,
+    1615,
+    1619,
+    1612,
+    1608,
+    1616,
+    1613,
+    1626,
+    1709,
+    1755,
+    1786,
+    1830,
+    1939,
+    1948,
+    1966,
+    2018,
+    2054,
+    2106,
+    2117,
+    2134,
+    2217,
+    2240,
+    2240,
+    2240,
+    2240
+   ],
+   "0.33": [
+    1587,
+    1587,
+    1595,
+    1604,
+    1621,
+    1623,
+    1627,
+    1620,
+    1616,
+    1625,
+    1622,
+    1634,
+    1713,
+    1759,
+    1791,
+    1835,
+    1946,
+    1954,
+    1973,
+    2026,
+    2062,
+    2113,
+    2124,
+    2141,
+    2224,
+    2247,
+    2247,
+    2247,
+    2247
+   ],
+   "0.4": [
+    1614,
+    1614,
+    1622,
+    1631,
+    1648,
+    1650,
+    1655,
+    1648,
+    1644,
+    1653,
+    1650,
+    1662,
+    1739,
+    1785,
+    1817,
+    1861,
+    1969,
+    1978,
+    1997,
+    2050,
+    2086,
+    2137,
+    2149,
+    2166,
+    2250,
+    2273,
+    2273,
+    2273,
+    2273
+   ],
+   "0.5": [
+    1648,
+    1648,
+    1656,
+    1665,
+    1681,
+    1683,
+    1689,
+    1683,
+    1683,
+    1692,
+    1690,
+    1704,
+    1791,
+    1837,
+    1867,
+    1909,
+    2020,
+    2029,
+    2048,
+    2101,
+    2137,
+    2188,
+    2199,
+    2216,
+    2291,
+    2315,
+    2315,
+    2315,
+    2315
+   ]
+  },
+  "iced": {
+   "0.0": [
+    3343,
+    3343,
+    3355,
+    3385,
+    3425,
+    3433,
+    3440,
+    3429,
+    3424,
+    3447,
+    3447,
+    3470,
+    3657,
+    3771,
+    3831,
+    3937,
+    4129,
+    4161,
+    4208,
+    4386,
+    4480,
+    4565,
+    4619,
+    4679,
+    4861,
+    4920,
+    4920,
+    4920,
+    4920
+   ],
+   "0.25": [
+    3461,
+    3461,
+    3473,
+    3503,
+    3543,
+    3550,
+    3558,
+    3547,
+    3544,
+    3566,
+    3567,
+    3591,
+    3778,
+    3887,
+    3955,
+    4069,
+    4259,
+    4290,
+    4337,
+    4508,
+    4597,
+    4681,
+    4733,
+    4793,
+    4972,
+    5033,
+    5033,
+    5033,
+    5033
+   ],
+   "0.33": [
+    3419,
+    3419,
+    3432,
+    3462,
+    3498,
+    3504,
+    3512,
+    3500,
+    3498,
+    3521,
+    3520,
+    3544,
+    3721,
+    3830,
+    3894,
+    4006,
+    4193,
+    4221,
+    4270,
+    4435,
+    4521,
+    4603,
+    4650,
+    4707,
+    4885,
+    4943,
+    4943,
+    4943,
+    4943
+   ],
+   "0.4": [
+    3439,
+    3439,
+    3451,
+    3479,
+    3514,
+    3521,
+    3530,
+    3518,
+    3517,
+    3540,
+    3539,
+    3564,
+    3737,
+    3845,
+    3910,
+    4021,
+    4205,
+    4233,
+    4283,
+    4445,
+    4532,
+    4613,
+    4661,
+    4719,
+    4894,
+    4953,
+    4953,
+    4953,
+    4953
+   ],
+   "0.5": [
+    3461,
+    3461,
+    3474,
+    3502,
+    3535,
+    3541,
+    3550,
+    3541,
+    3545,
+    3567,
+    3566,
+    3594,
+    3778,
+    3885,
+    3947,
+    4056,
+    4240,
+    4270,
+    4318,
+    4483,
+    4567,
+    4650,
+    4697,
+    4753,
+    4920,
+    4978,
+    4978,
+    4978,
+    4978
+   ]
+  },
+  "hero_at_customer": {
+   "0.0": [
+    300,
+    300,
+    302,
+    303,
+    308,
+    308,
+    308,
+    308,
+    307,
+    308,
+    308,
+    311,
+    325,
+    332,
+    338,
+    344,
+    362,
+    365,
+    369,
+    373,
+    380,
+    389,
+    391,
+    393,
+    410,
+    415,
+    415,
+    415,
+    415
+   ],
+   "0.25": [
+    468,
+    468,
+    471,
+    472,
+    476,
+    477,
+    477,
+    477,
+    476,
+    479,
+    478,
+    482,
+    500,
+    508,
+    520,
+    536,
+    552,
+    554,
+    559,
+    560,
+    563,
+    574,
+    576,
+    579,
+    600,
+    607,
+    607,
+    607,
+    607
+   ],
+   "0.33": [
+    480,
+    480,
+    484,
+    485,
+    485,
+    485,
+    485,
+    485,
+    484,
+    488,
+    487,
+    491,
+    504,
+    512,
+    525,
+    541,
+    558,
+    560,
+    565,
+    567,
+    571,
+    581,
+    583,
+    586,
+    608,
+    614,
+    614,
+    614,
+    614
+   ],
+   "0.4": [
+    508,
+    508,
+    511,
+    512,
+    512,
+    512,
+    513,
+    512,
+    512,
+    516,
+    515,
+    519,
+    530,
+    538,
+    551,
+    567,
+    582,
+    584,
+    589,
+    591,
+    595,
+    606,
+    608,
+    611,
+    634,
+    640,
+    640,
+    640,
+    640
+   ],
+   "0.5": [
+    541,
+    541,
+    545,
+    546,
+    545,
+    544,
+    547,
+    547,
+    551,
+    555,
+    554,
+    560,
+    582,
+    590,
+    601,
+    615,
+    632,
+    634,
+    640,
+    642,
+    646,
+    656,
+    658,
+    661,
+    674,
+    682,
+    682,
+    682,
+    682
+   ]
+  },
+  "customer": "RET-A",
+  "sku": "ICB-IC-500"
+ },
+ "matching": {
+  "stats": {
+   "fonterra_records": 127,
+   "lactalis_records": 183,
+   "true_pairs": 72,
+   "auto_matched": 69,
+   "auto_correct": 69,
+   "review": 2,
+   "review_correct_suggestion": 2,
+   "new": 56,
+   "new_correct": 55,
+   "auto_precision_pct": 100.0,
+   "pairs_found_pct": 98.6,
+   "thresholds": {
+    "auto": 0.9,
+    "review": 0.75
+   },
+   "method": "name similarity (after removing PTY LTD, CO, BAR and accents) 65%, postcode 25%, channel 10%"
+  },
+  "review_queue": [
+   {
+    "fonterra_id": "FON-QLD-0041",
+    "fonterra_name": "LIGHTHOUSE ROASTING CO BRISBANE",
+    "suggested": "L100167",
+    "suggested_name": "Lighthouse Roasters Brisbane",
+    "score": 0.841,
+    "why": "names 91% alike, postcode differs (4603 vs 4602), same channel",
+    "truth": "same customer"
+   },
+   {
+    "fonterra_id": "FON-QLD-0036",
+    "fonterra_name": "SUMMIT ROASTING CO CALOUNDRA",
+    "suggested": "L100011",
+    "suggested_name": "Summit Roasters Caloundra",
+    "score": 0.834,
+    "why": "names 90% alike, postcode differs (4354 vs 4353), same channel",
+    "truth": "same customer"
+   }
+  ],
+  "auto_examples": [
+   {
+    "fonterra_id": "FON-QLD-0013",
+    "fonterra_name": "RIVERSIDE DELI TOOWOOMBA",
+    "lactalis_id": "L100143",
+    "lactalis_name": "Riverside Deli Toowoomba",
+    "score": 0.9,
+    "why": "names match after cleaning, postcode differs (4555 vs 4554), same channel",
+    "correct": true
+   },
+   {
+    "fonterra_id": "FON-QLD-0053",
+    "fonterra_name": "RIVERSIDE GROCERS NOOSA",
+    "lactalis_id": "L100113",
+    "lactalis_name": "Riverside Grocer Noosa",
+    "score": 0.9,
+    "why": "names match after cleaning, postcode differs (4428 vs 4427), same channel",
+    "correct": true
+   },
+   {
+    "fonterra_id": "FON-QLD-0054",
+    "fonterra_name": "RIVERSIDE KITCHEN PTY LTD REDCLIFFE",
+    "lactalis_id": "L100033",
+    "lactalis_name": "Riverside Kitchen Redcliffe",
+    "score": 0.9,
+    "why": "names match after cleaning, postcode differs (4065 vs 4064), same channel",
+    "correct": true
+   },
+   {
+    "fonterra_id": "FON-QLD-0056",
+    "fonterra_name": "RIVERSIDE ESPRESSO BAR NAMBOUR",
+    "lactalis_id": "L100162",
+    "lactalis_name": "Riverside Espresso Nambour",
+    "score": 0.9,
+    "why": "names match after cleaning, postcode differs (4315 vs 4314), same channel",
+    "correct": true
+   },
+   {
+    "fonterra_id": "FON-QLD-0051",
+    "fonterra_name": "VILLAGE EATERY BEAUDESERT",
+    "lactalis_id": "L100031",
+    "lactalis_name": "Village Eatery Beaudesert",
+    "score": 0.9,
+    "why": "names match after cleaning, postcode differs (4469 vs 4468), same channel",
+    "correct": true
+   },
+   {
+    "fonterra_id": "FON-QLD-0048",
+    "fonterra_name": "GRIND ESPRESSO BAR NAMBOUR",
+    "lactalis_id": "L100172",
+    "lactalis_name": "Grind Espresso Nambour",
+    "score": 0.9,
+    "why": "names match after cleaning, postcode differs (4141 vs 4140), same channel",
+    "correct": true
+   }
+  ],
+  "auto_wrong": [],
+  "missed": [
+   {
+    "fonterra_id": "FON-QLD-0877",
+    "fonterra_name": "INDEPENDENT GROCERS - QLD BUYING GROUP",
+    "true_lactalis_id": "IND",
+    "true_lactalis_name": "Independent Grocers",
+    "in_lactalis_master": false,
+    "best_score": 0.342
+   }
+  ],
+  "new_examples": [
+   {
+    "fonterra_id": "FON-QLD-0093",
+    "fonterra_name": "BAY FOODSTORE CALOUNDRA",
+    "closest": "Bean Foodstore Caloundra",
+    "score": 0.709
+   },
+   {
+    "fonterra_id": "FON-QLD-0080",
+    "fonterra_name": "RIVERSIDE CAFE BEAUDESERT",
+    "closest": "Riverside Deli Toowoomba",
+    "score": 0.695
+   },
+   {
+    "fonterra_id": "FON-QLD-0079",
+    "fonterra_name": "COASTAL GROCER CABOOLTURE",
+    "closest": "Market Eatery Caboolture",
+    "score": 0.674
+   },
+   {
+    "fonterra_id": "FON-QLD-0086",
+    "fonterra_name": "LIGHTHOUSE CAFE CLEVELAND",
+    "closest": "Lighthouse Roasters Cleveland",
+    "score": 0.664
+   },
+   {
+    "fonterra_id": "FON-QLD-0099",
+    "fonterra_name": "MARKET ROASTERS MAROOCHYDORE",
+    "closest": "Creek Roasters Maroochydore",
+    "score": 0.664
+   }
+  ]
+ },
+ "audit_seed": [
+  {
+   "time": "06:00",
+   "who": "Demand agent",
+   "what": "Forecast refreshed for 12 to 25 Oct (weather forecast updated 05:30)"
+  },
+  {
+   "time": "06:02",
+   "who": "Supply agent",
+   "what": "Line load and silo balance checked against the new forecast"
+  },
+  {
+   "time": "06:05",
+   "who": "Order agent",
+   "what": "858 legacy-code order lines in the last 4 weeks reviewed"
+  }
+ ],
+ "routing_tests": [
+  {
+   "question": "why so many cases of ice break on wednesday",
+   "expected": "Q1",
+   "got": "Q1",
+   "ok": true
+  },
+  {
+   "question": "explain the 595",
+   "expected": "Q1",
+   "got": "Q1",
+   "ok": true
+  },
+  {
+   "question": "what if it's 26 degrees",
+   "expected": "Q2",
+   "got": "Q2",
+   "ok": true
+  },
+  {
+   "question": "what happens at 40°C",
+   "expected": "Q2",
+   "got": "Q2",
+   "ok": true
+  },
+  {
+   "question": "what if we only do 25% off",
+   "expected": "Q3",
+   "got": "Q3",
+   "ok": true
+  },
+  {
+   "question": "how accurate is it",
+   "expected": "Q4",
+   "got": "Q4",
+   "ok": true
+  },
+  {
+   "question": "can I trust the forecast",
+   "expected": "Q4",
+   "got": "Q4",
+   "ok": true
+  },
+  {
+   "question": "where does it help the most",
+   "expected": "Q5",
+   "got": "Q5",
+   "ok": true
+  },
+  {
+   "question": "why is monday wrong",
+   "expected": "Q6",
+   "got": "Q6",
+   "ok": true
+  },
+  {
+   "question": "does breaka lose sales",
+   "expected": "Q7",
+   "got": "Q7",
+   "ok": true
+  },
+  {
+   "question": "do we need overtime at nambour",
+   "expected": "Q8",
+   "got": "Q8",
+   "ok": true
+  },
+  {
+   "question": "is there enough milk friday",
+   "expected": "Q9",
+   "got": "Q9",
+   "ok": true
+  },
+  {
+   "question": "what's the ROI",
+   "expected": "Q10",
+   "got": "Q10",
+   "ok": true
+  },
+  {
+   "question": "how much money will we save",
+   "expected": "Q10",
+   "got": "Q10",
+   "ok": true
+  },
+  {
+   "question": "old fonterra codes",
+   "expected": "Q11",
+   "got": "Q11",
+   "ok": true
+  },
+  {
+   "question": "how good is the customer matching",
+   "expected": "Q12",
+   "got": "Q12",
+   "ok": true
+  },
+  {
+   "question": "any price conflicts",
+   "expected": "Q13",
+   "got": "Q13",
+   "ok": true
+  },
+  {
+   "question": "how much do we waste",
+   "expected": "Q14",
+   "got": "Q14",
+   "ok": true
+  },
+  {
+   "question": "what inputs does the model use",
+   "expected": "Q15",
+   "got": "Q15",
+   "ok": true
+  },
+  {
+   "question": "does the AI decide on its own",
+   "expected": "Q16",
+   "got": "Q16",
+   "ok": true
+  },
+  {
+   "question": "is this real data",
+   "expected": "Q17",
+   "got": "Q17",
+   "ok": true
+  },
+  {
+   "question": "what would a pilot look like",
+   "expected": "Q18",
+   "got": "Q18",
+   "ok": true
+  },
+  {
+   "question": "which days are hot",
+   "expected": "Q19",
+   "got": "Q19",
+   "ok": true
+  },
+  {
+   "question": "total for the promotion week",
+   "expected": "Q20",
+   "got": "Q20",
+   "ok": true
+  },
+  {
+   "question": "what does the label checker look for",
+   "expected": "Q21",
+   "got": "Q21",
+   "ok": true
+  },
+  {
+   "question": "check the allergens on the carton",
+   "expected": "Q21",
+   "got": "Q21",
+   "ok": true
+  },
+  {
+   "question": "who signs off the artwork",
+   "expected": "Q22",
+   "got": "Q22",
+   "ok": true
+  },
+  {
+   "question": "how sure are you",
+   "expected": "Q4",
+   "got": "Q4",
+   "ok": true
+  },
+  {
+   "question": "how confident is the forecast",
+   "expected": "Q4",
+   "got": "Q4",
+   "ok": true
+  },
+  {
+   "question": "does it replace planners",
+   "expected": "Q16",
+   "got": "Q16",
+   "ok": true
+  },
+  {
+   "question": "what about SAP",
+   "expected": "Q23",
+   "got": "Q23",
+   "ok": true
+  },
+  {
+   "question": "how does it connect to our systems",
+   "expected": "Q23",
+   "got": "Q23",
+   "ok": true
+  },
+  {
+   "question": "what do you need from us",
+   "expected": "Q24",
+   "got": "Q24",
+   "ok": true
+  },
+  {
+   "question": "what's wrong with the label",
+   "expected": "Q21",
+   "got": "Q21",
+   "ok": true
+  },
+  {
+   "question": "is the iced coffee carton compliant",
+   "expected": "Q21",
+   "got": "Q21",
+   "ok": true
+  },
+  {
+   "question": "is the forecast any good",
+   "expected": "Q4",
+   "got": "Q4",
+   "ok": true
+  },
+  {
+   "question": "what happens on public holidays",
+   "expected": "Q6",
+   "got": "Q6",
+   "ok": true
+  },
+  {
+   "question": "why is monday so low",
+   "expected": "Q6",
+   "got": "Q6",
+   "ok": true
+  },
+  {
+   "question": "what about the old fonterra prices",
+   "expected": "Q13",
+   "got": "Q13",
+   "ok": true
+  },
+  {
+   "question": "can it handle other states",
+   "expected": "Q25",
+   "got": "Q25",
+   "ok": true
+  },
+  {
+   "question": "what about cheese",
+   "expected": "Q25",
+   "got": "Q25",
+   "ok": true
+  },
+  {
+   "question": "who is accountable if it's wrong",
+   "expected": "Q16",
+   "got": "Q16",
+   "ok": true
+  },
+  {
+   "question": "is our data safe",
+   "expected": "Q26",
+   "got": "Q26",
+   "ok": true
+  },
+  {
+   "question": "how much does this cost",
+   "expected": "Q27",
+   "got": "Q27",
+   "ok": true
+  },
+  {
+   "question": "can I see the audit trail",
+   "expected": "Q16",
+   "got": "Q16",
+   "ok": true
+  },
+  {
+   "question": "how does the AI know about the weather",
+   "expected": "Q15",
+   "got": "Q15",
+   "ok": true
+  },
+  {
+   "question": "is this our data",
+   "expected": "Q17",
+   "got": "Q17",
+   "ok": true
+  },
+  {
+   "question": "are the agent answers live AI",
+   "expected": "Q17",
+   "got": "Q17",
+   "ok": true
+  },
+  {
+   "question": "what does it cost",
+   "expected": "Q27",
+   "got": "Q27",
+   "ok": true
+  },
+  {
+   "question": "why should we believe 36%",
+   "expected": "Q10",
+   "got": "Q10",
+   "ok": true
+  },
+  {
+   "question": "why LightGBM, not a newer AI model",
+   "expected": "Q28",
+   "got": "Q28",
+   "ok": true
+  },
+  {
+   "question": "who won the footy",
+   "expected": null,
+   "got": null,
+   "ok": true
+  }
+ ]
+}

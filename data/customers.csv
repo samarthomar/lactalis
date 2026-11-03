@@ -1,0 +1,7 @@
+customer_id,name,channel,ship_to,tier
+RET-A,National Retailer A,Major retail,"Retailer A DC, SE QLD",major
+RET-B,National Retailer B,Major retail,"Retailer B DC, SE QLD",major
+RET-C,Discount Retailer,Discount retail,"Retailer C DC, SE QLD",major
+IND,Independent Grocers,Independent,Richlands DC (direct to store),other
+FS,Food Service,Food service,Richlands DC (route),other
+CNV,Convenience & Fuel,Convenience,Richlands DC (route),other

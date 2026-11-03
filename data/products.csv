@@ -1,0 +1,17 @@
+sku,name,brand,subcat,size_l,units_per_case,base_cases_per_day,shelf_life_days,milk_fraction,annual_trend,temp_beta,line,litres_per_case
+PAU-FC-2L,Pauls Full Cream Milk 2L,Pauls,white_take_home,2.0,9,3200,14,1.0,-0.02,0.004,L1,18.0
+PAU-FC-3L,Pauls Full Cream Milk 3L,Pauls,white_take_home,3.0,6,1500,14,1.0,-0.02,0.004,L1,18.0
+PAU-RF-2L,Pauls Reduced Fat Milk 2L,Pauls,white_take_home,2.0,9,1800,14,1.0,-0.01,0.004,L1,18.0
+PAU-BAR-2L,Pauls Barista Milk 2L,Pauls,barista,2.0,9,700,14,1.0,0.05,0.002,L1,18.0
+PAU-FC-1L,Pauls Full Cream Milk 1L,Pauls,white_single,1.0,12,600,14,1.0,-0.02,0.006,L2,12.0
+PAU-RF-1L,Pauls Reduced Fat Milk 1L,Pauls,white_single,1.0,12,500,14,1.0,-0.01,0.006,L2,12.0
+ZYM-LF-1L,Zymil Lactose Free Milk 1L,Zymil,lactose_free,1.0,12,450,21,1.0,0.09,0.003,L2,12.0
+ZYM-LF-2L,Zymil Lactose Free Milk 2L,Zymil,lactose_free,2.0,9,350,21,1.0,0.09,0.003,L1,18.0
+OAK-CHOC-600,Oak Chocolate Milk 600mL,Oak,flavoured_milk,0.6,12,900,16,0.88,0.0,0.025,L3,7.199999999999999
+OAK-STR-600,Oak Strawberry Milk 600mL,Oak,flavoured_milk,0.6,12,450,16,0.88,0.0,0.025,L3,7.199999999999999
+OAK-IC-600,Oak Iced Coffee 600mL,Oak,iced_coffee,0.6,12,500,16,0.82,0.02,0.035,L3,7.199999999999999
+ICB-IC-500,Ice Break Iced Coffee 500mL,Ice Break,iced_coffee,0.5,12,1400,21,0.8,0.04,0.035,L3,6.0
+ICB-IC-750,Ice Break Iced Coffee 750mL,Ice Break,iced_coffee,0.75,12,700,21,0.8,0.04,0.035,L3,9.0
+ICB-LS-500,Ice Break Iced Coffee Less Sugar 500mL,Ice Break,iced_coffee,0.5,12,300,21,0.82,0.08,0.035,L3,6.0
+BRK-IC-750,Breaka Iced Coffee 750mL,Breaka,iced_coffee,0.75,12,450,16,0.82,0.0,0.035,L3,9.0
+BRK-CHOC-750,Breaka Chocolate Milk 750mL,Breaka,flavoured_milk,0.75,12,250,16,0.88,0.0,0.025,L3,9.0
