@@ -1,4 +1,5 @@
-# Vercel only needs the static demo
+# Vercel only needs the static demo and the password check
 /*
 !/public
 !/vercel.json
+!/middleware.js
