@@ -27,6 +27,9 @@ python -m venv .venv
 ## Source of requirements
 BRD: Demand Supply Control Tower (Claude Docs; written under the earlier name Milk-to-Shelf Control Tower).
 
+## Hosting on AWS
+See `DEPLOY-AWS.md` (AWS Amplify: upload a zip or connect this repo; `amplify.yml` is included).
+
 ## Hosting on Vercel
 `vercel.json` serves `public/index.html` as a static site (no install, no build, no browser caching). `middleware.js` shows a password page before the demo loads. The right password gives a signed pass that lasts 30 seconds, so every new visit, tab or refresh asks again.
 
